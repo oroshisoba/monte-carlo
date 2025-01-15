@@ -7568,35 +7568,51 @@ a.anchor-link {
 </li>
 </ul>
 <p>$E^{*}(S_{T}) = S_{0}e^{rT}$</p>
-<h3 id="%E6%9C%9F%E5%BE%85%E5%80%A4%EF%BC%88%E5%8E%9F%E8%B3%87%E7%94%A3%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%A4%89%E5%8C%96%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8B%E3%82%89%EF%BC%89">期待値（原資産の価格変化モデルから）<a class="anchor-link" href="#%E6%9C%9F%E5%BE%85%E5%80%A4%EF%BC%88%E5%8E%9F%E8%B3%87%E7%94%A3%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%A4%89%E5%8C%96%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8B%E3%82%89%EF%BC%89">¶</a></h3><p>また、$S_T = S_{0}e^{\mu T+{\sigma}W_{T}}$ ・・(2)式から期待値は以下の値となる（らしい）</p>
+<h3 id="%E6%9C%9F%E5%BE%85%E5%80%A4%EF%BC%88%E5%8E%9F%E8%B3%87%E7%94%A3%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%A4%89%E5%8C%96%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8B%E3%82%89%EF%BC%89">期待値（原資産の価格変化モデルから）<a class="anchor-link" href="#%E6%9C%9F%E5%BE%85%E5%80%A4%EF%BC%88%E5%8E%9F%E8%B3%87%E7%94%A3%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%A4%89%E5%8C%96%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8B%E3%82%89%EF%BC%89">¶</a></h3><p>また、$S_T = S_{0}e^{\mu T+{\sigma}W_{T}}$ ・・(2)式から期待値は以下の値となる</p>
 <p>$E^*(S_T) = S_{0}e^{{\mu}T+\frac{\sigma^2T}{2}}$</p>
 <ul>
+<li>※導出</li>
+<li>対数正規分布に従う<ul>
 <li>$S_T = S_{0}e^{\mu T+{\sigma}W_{T}}$</li>
+<li>$\ln(S_T) = \ln(S_0) + \mu T + \sigma W_T$<ul>
+<li>$\ln(S_T) = \ln(S_0) + \mu T$ は定数、$\sigma W_T$ は正規分布</li>
+<li>→　$\ln(S_T)$ は正規分布。</li>
+<li>→　$S_T$ は対数正規分布。</li>
+<li>対数正規分布に従う場合は期待値の公式があるらしい<ul>
+<li>$E[Y] = e^{\mu + \frac{\sigma ^2}{2}}$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>期待値<ul>
 <li>$E[S_T] = E[S_{0}e^{\mu T+{\sigma}W_{T}}]$</li>
-<li>$E[S_T] = S_{0}E[e^{\mu T+{\sigma}W_{T}}]$<ul>
+<li>$E[S_T] = S_{0}E[e^{\mu T+{\sigma}W_{T}}]$</li>
 <li>$E\left[e^{uT + \sigma W_T}\right] = e^{uT} \cdot E\left[e^{\sigma W_T}\right]$<ul>
-<li>正規分布における指数関数の期待値の公式<ul>
-<li>$E[e^{\sigma W_T}] = e^{\mu_W + \frac{\sigma_W^2}{2}}$<ul>
-<li>$\mu_W = 0$  （正規分布  $W_T$  の平均）</li>
-<li>$\sigma_W^2 = \sigma^2 T$  （正規分布  $\sigma W_T$  の分散）</li>
+<li>正規分布における指数関数の期待値の公式を使って</li>
+<li>$E[e^{\sigma W_T}] = e^{\mu W + \frac{\sigma^2 W}{2}}$<ul>
+<li>$\mu W = 0$  （正規分布  $W_T$  の平均 = 0）</li>
+<li>$\sigma^2 W = \sigma^2 T$  （正規分布  $\sigma W_T$  の分散）</li>
 </ul>
 </li>
 <li>$E[e^{\sigma W_T}] = e^{0 + \frac{\sigma^2 T}{2}} = e^{\frac{\sigma^2 T}{2}}$</li>
+<li>$E\left[e^{uT + \sigma W_T}\right] = e^{uT} \cdot e^{\frac{\sigma^2 T}{2}} = e^{uT + \frac{\sigma^2 T}{2}}$</li>
 </ul>
 </li>
-</ul>
-</li>
-<li>$E\left[e^{uT + \sigma W_T}\right] = e^{uT} \cdot e^{\frac{\sigma^2 T}{2}}$</li>
-</ul>
-</li>
+<li>$E[S_T] = S_{0}E[e^{\mu T+{\sigma}W_{T}}]$</li>
 <li>$E[S_T] = S_0 e^{\mu T + \frac{\sigma^2 T}{2}}$</li>
 </ul>
+</li>
+</ul>
 <h3 id="%E6%9C%9F%E5%BE%85%E5%80%A4%E3%81%8B%E3%82%89$%5Cmu$%E3%82%92%E6%B1%82%E3%82%81%E3%82%8B">期待値から$\mu$を求める<a class="anchor-link" href="#%E6%9C%9F%E5%BE%85%E5%80%A4%E3%81%8B%E3%82%89$%5Cmu$%E3%82%92%E6%B1%82%E3%82%81%E3%82%8B">¶</a></h3><p>リスクフリーレートおよび原資産の価格変化モデルの２つの期待値は一致するので</p>
-<p>$S_{0}e^{{\mu}T+\frac{\sigma^2T}{2}} = S_{0}e^{rT}$</p>
-<p>${\mu}T+\frac{\sigma^2T}{2} = {rT}$</p>
-<p>${\mu}T = {rT} - \frac{\sigma^2T}{2}$</p>
-<p>${\mu} = {r} - \frac{\sigma^2}{2}$</p>
-<p>求められた$\mu$を(2)式に代入してシミュレーションをすれば、「リスク中立経済を前提にしたシミュレーション」を行っていることになる。</p>
+<ul>
+<li>$S_{0}e^{{\mu}T+\frac{\sigma^2T}{2}} = S_{0}e^{rT}$</li>
+<li>${\mu}T+\frac{\sigma^2T}{2} = {rT}$</li>
+<li>${\mu}T = {rT} - \frac{\sigma^2T}{2}$</li>
+<li>${\mu} = {r} - \frac{\sigma^2}{2}$</li>
+</ul>
+<p>求められた $\mu$ を $S_T = S_{0}e^{\mu T+{\sigma}W_{T}}$ に代入してシミュレーションをすると「リスク中立経済を前提にしたシミュレーション」になる</p>
 <h2 id="%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E3%82%84%E3%82%84%E3%81%93%E3%81%97%E3%81%84%E8%A9%B1">ちょっとややこしい話<a class="anchor-link" href="#%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E3%82%84%E3%82%84%E3%81%93%E3%81%97%E3%81%84%E8%A9%B1">¶</a></h2><p><code>リスク中立経済下においては、金融商品のリターンの期待値がリスクフリーレートになる必要があることから、ある金融商品 S の時点 T における価値の期待値は、以下の式を満たす必要</code></p>
 <p>$E^{*}(S_{T}) = S_{0}e^{rT}$</p>
 <p>と記載していた。</p>
@@ -7676,7 +7692,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [344]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -7699,28 +7715,36 @@ a.anchor-link {
 <span class="n">v</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"ボラティリティ は "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
 
-<span class="n">sim_count</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="n">sim_count</span> <span class="o">=</span> <span class="mi">5000000</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"シミュレーション回数 は "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sim_count</span><span class="p">))</span>
 <span class="c1"># 標準正規分布に従う乱数をsim_count個生成</span>
 <span class="n">Wt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sim_count</span><span class="p">)</span>
+<span class="c1"># 乱数の先頭5個を表示</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"乱数のサンプル"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Wt</span><span class="p">[:</span><span class="mi">5</span><span class="p">]))</span>
 <span class="c1"># Wtにvを乗算する</span>
 <span class="n">sWt</span> <span class="o">=</span> <span class="n">Wt</span> <span class="o">*</span> <span class="n">v</span>
+<span class="c1"># sWtの先頭5個を表示</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ボラリティ乗算後のサンプル"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sWt</span><span class="p">[:</span><span class="mi">5</span><span class="p">]))</span>
 
 <span class="c1"># sWtの要素ごとに、(S0 + 自然定数eの(m + sWt)乗)を計算</span>
 <span class="n">St</span> <span class="o">=</span> <span class="n">S0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">sWt</span><span class="p">)</span>
+<span class="c1"># Stの先頭5個を表示</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Stのサンプル"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">St</span><span class="p">[:</span><span class="mi">5</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Stの平均は "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">St</span><span class="p">)))</span>
 
 <span class="c1"># StがStrikeよりも大きい場合はSt、小さい場合は0を設定する</span>
 <span class="n">price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">St</span> <span class="o">-</span> <span class="n">Strike</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># priceの先頭5個を表示</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"価値のサンプル"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">price</span><span class="p">[:</span><span class="mi">5</span><span class="p">]))</span>
 
 <span class="c1"># priceの平均を計算</span>
 <span class="n">sim_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"priceの平均は "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sim_result</span><span class="p">))</span>
-<span class="c1"># priceの平均を(ドル金利-円金利)で割る</span>
-<span class="n">sim_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">price</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">d_rate</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"priceの平均をドル金利で割ると "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sim_result</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"価値の平均は "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sim_result</span><span class="p">))</span>
 
-<span class="c1">#TODO: 最後にドル金利で除算したけど、HPだと円金利で割っている。どちらが正しいのか？</span>
+<span class="c1"># priceの平均を円金利で割る</span>
+<span class="c1"># 13回の結果から円金利で計算していそうなので、円金利で割るのが正しいと思われる</span>
+<span class="n">sim_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">price</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">y_rate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"価値の平均を円金利で割ると "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sim_result</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7739,10 +7763,14 @@ mu は -0.008
 S0 は 80
 行使価格 は 80
 ボラティリティ は 0.1
-シミュレーション回数 は 1000000
-Stの平均は 79.76440823375634
-priceの平均は 3.068122816373911
-priceの平均をドル金利で割ると 3.0528585237551358
+シミュレーション回数 は 5000000
+乱数のサンプル[ 0.86257141  1.91376499  0.60473773 -1.81071242  0.89161587]
+ボラリティ乗算後のサンプル[ 0.08625714  0.1913765   0.06047377 -0.18107124  0.08916159]
+Stのサンプル[86.51205562 96.10132785 84.30999378 66.21820282 86.76369048]
+Stの平均は 79.76585685324018
+価値のサンプル[ 6.51205562 16.10132785  4.30999378  0.          6.76369048]
+価値の平均は 3.0706796917457284
+価値の平均を円金利で割ると 3.064550590564599
 </pre>
 </div>
 </div>
@@ -7767,13 +7795,11 @@ priceの平均をドル金利で割ると 3.0528585237551358
     <span class="n">d2</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="o">/</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">v</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">*</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
 
-<span class="n">bs_result</span> <span class="o">=</span> <span class="n">ecall</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.003</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">bs_result</span> <span class="o">=</span> <span class="n">ecall</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"BS式では "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bs_result</span><span class="p">))</span>
-<span class="c1"># BS式の結果を(ドル金利-円金利)で割る</span>
-<span class="n">bs_result</span> <span class="o">=</span> <span class="n">bs_result</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">d_rate</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"BS式の結果をドル金利で割ると "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bs_result</span><span class="p">))</span>
-
-<span class="c1">#TODO: 最後にドル金利で除算したけど、必要か分からない。HPの値にはかなり近い。</span>
+<span class="c1"># BS式の結果を円金利で割る</span>
+<span class="c1">#bs_result = bs_result / (1 + y_rate)</span>
+<span class="c1">#print("BS式の結果をドル金利で割ると " + str(bs_result))</span>
 </pre></div>
 </div>
 </div>
@@ -7787,7 +7813,6 @@ priceの平均をドル金利で割ると 3.0528585237551358
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>BS式では 3.076257696399253
-BS式の結果をドル金利で割ると 3.0609529317405504
 </pre>
 </div>
 </div>
@@ -7798,7 +7823,7 @@ BS式の結果をドル金利で割ると 3.0609529317405504
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [271]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [345]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># シミュレーションとBS式の結果を比較する</span>
@@ -7819,9 +7844,9 @@ BS式の結果をドル金利で割ると 3.0609529317405504
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>シミュレーションとBS式の結果を比較する
-シミュレーションの結果は 3.0528585237551358
-BS式の結果は 3.0609529317405504
-シミュレーションの結果とBS式の結果の差は -0.008094407985414609
+シミュレーションの結果は 3.064550590564599
+BS式の結果は 3.076257696399253
+シミュレーションの結果とBS式の結果の差は -0.011707105834653841
 </pre>
 </div>
 </div>
